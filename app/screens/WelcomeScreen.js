@@ -1,6 +1,7 @@
 import { Button, Icon, Input, Item, Label } from "native-base";
 import React, { useState } from "react";
-import { StyleSheet, ImageBackground, Image, Text } from "react-native";
+import { StyleSheet, ImageBackground, Image, Text, Alert } from "react-native";
+
 import authStore from "../stores/authStore";
 
 const WelcomeScreen = ({ navigation }) => {
@@ -11,6 +12,7 @@ const WelcomeScreen = ({ navigation }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await authStore.signIn(user);
+    authStore.isLoading = false;
   };
 
   return (

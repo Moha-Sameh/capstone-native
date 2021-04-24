@@ -1,16 +1,15 @@
 import React from "react";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../components/HomeComponent";
+import Tips from "../components/TipsContent";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-const HomeStack = createStackNavigator();
-
-const HomeStackScreen = ({ navigation }) => {
+const TipStack = createStackNavigator();
+const TipStackScreen = ({ navigation }) => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen
-        name="Home"
-        component={Home}
+    <TipStack.Navigator>
+      <TipStack.Screen
+        name="Tips"
+        component={Tips}
         options={{
           headerLeft: () => (
             <Ionicons.Button
@@ -23,8 +22,8 @@ const HomeStackScreen = ({ navigation }) => {
           ),
         }}
       />
-    </HomeStack.Navigator>
+    </TipStack.Navigator>
   );
 };
 
-export default HomeStackScreen;
+export default TipStackScreen;

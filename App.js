@@ -7,11 +7,11 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 //Screens
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import Signup from "./app/screens/SignupScreen";
-import Home from "./app/screens/HomeScreen";
 
 //Auth
 import authStore from "./app/stores/authStore";
 import { observer } from "mobx-react";
+import MainTapScreen from "./app/components/TabNavigator";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -31,7 +31,7 @@ const App = () => {
         </Stack.Navigator>
       ) : (
         <Drawer.Navigator>
-          <Drawer.Screen name="Home" component={Home} />
+          <Drawer.Screen name="Home" component={MainTapScreen} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>

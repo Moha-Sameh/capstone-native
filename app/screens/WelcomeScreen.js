@@ -12,7 +12,6 @@ const WelcomeScreen = ({ navigation }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await authStore.signIn(user);
-    authStore.isLoading = false;
   };
 
   return (

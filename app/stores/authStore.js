@@ -45,6 +45,7 @@ class AuthStore {
     try {
       const res = await instance.post("/signin", userData);
       this.storageData(res.data.token);
+      this.isLoading = false;
     } catch (error) {
       console.log("AuthStore -> signIn -> error", error);
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 //Screens
@@ -7,16 +7,35 @@ import HomeStackScreen from "../screens/HomeScreen";
 import TipStackScreen from "../screens/TipScreen";
 import HistoryStackScreen from "../screens/HistoryScreen";
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 export const MainTapScreen = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
       labeled=""
       component="HomeStackScreen"
-      activeColor="#f0edf6"
       inactiveColor="#3e2465"
-      barStyle={{ backgroundColor: "#694fad" }}
+      activeColor="#f0edf6"
+      tabBarOptions={{
+        activeTintColor: "#ff5733",
+        inactiveTintColor: "orange",
+        showLabel: false,
+        style: {
+          borderWidth: 0,
+          borderBottomWidth: 0,
+          backgroundColor: "#e6e6e6",
+          borderBottomRightRadius: 20,
+          borderBottomLeftRadius: 20,
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          borderColor: "white",
+          position: "absolute",
+          marginBottom: 25,
+          marginLeft: 60,
+          height: 45,
+          width: "70%",
+        },
+      }}
     >
       <Tab.Screen
         name="Info"

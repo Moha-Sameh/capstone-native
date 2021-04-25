@@ -4,11 +4,14 @@ import { Text, Image, StyleSheet, View } from "react-native";
 import { observer } from "mobx-react";
 import { Card, Title } from "react-native-paper";
 import MapView, { Marker } from "react-native-maps";
+import authStore from "../stores/authStore";
 
 const PanikRequest = () => {
   return (
     <View style={{ flex: 1 }}>
-      <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <View
+        style={{ margin: 50, justifyContent: "center", alignItems: "center" }}
+      >
         <MapView
           style={styles.map}
           initialRegion={{
@@ -28,12 +31,12 @@ const PanikRequest = () => {
           />
         </MapView>
       </View>
-      <View style={{ marginTop: 100, marginLeft: 85 }}>
+      <View style={{ marginTop: 50, marginLeft: 85 }}>
         <Card style={styles.Card}>
-          <Text style={styles.Text}>Name</Text>
+          <Text style={styles.Text}>{authStore.user.firstName}</Text>
         </Card>
         <Card style={styles.Card}>
-          <Text style={styles.Text}>Name</Text>
+          <Text style={styles.Text}>{authStore.user.phonenumber}</Text>
         </Card>
         <Card style={styles.Card}>
           <Text style={styles.Text}>Name</Text>
@@ -97,10 +100,8 @@ const styles = StyleSheet.create({
   },
   map: {
     position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    width: 200,
+    height: 100,
   },
 });
 

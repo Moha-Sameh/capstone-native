@@ -25,12 +25,12 @@ function DrawerContent(props) {
         <View style={styles.drawerContent}>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 15 }}>
-              {/* <Avatar.Image
+              <Avatar.Image
                 source={{
                   uri: authStore.user.image,
                 }}
                 size={50}
-              /> */}
+              />
               <View style={{ marginLeft: 15, flexDirection: "column" }}>
                 <Title style={styles.title}>{authStore.user.firstName}</Title>
                 <Caption style={styles.caption}>
